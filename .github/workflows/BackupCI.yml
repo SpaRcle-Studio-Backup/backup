@@ -1,0 +1,22 @@
+name: SpaRcle Studio Backup CI 
+
+on:
+  push: 
+    branches:
+      - main
+  schedule:
+    - cron: "*/15 * * * *"
+    
+jobs: 
+    backup:
+        runs-on: ubuntu-latest
+    
+    steps: 
+        - name: Running backup script.
+            id: script
+            shell: bash
+            working-directory: ${{github.workspace}}/CI
+            run: |
+              python ./BackupCI.py
+            env:
+              ciToken: ${{ secrets.BACKUPCITOKEN }}
