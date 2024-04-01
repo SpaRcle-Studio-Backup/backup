@@ -11,7 +11,12 @@ jobs:
     backup:
       runs-on: ubuntu-latest
     
-      steps: 
+      steps:
+        - name: Fetching repository.
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 1      
+            
         - name: Running backup script.
           id: script
           shell: bash
