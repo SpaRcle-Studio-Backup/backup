@@ -13,10 +13,10 @@ jobs:
     
     steps: 
         - name: Running backup script.
-            id: script
-            shell: bash
-            working-directory: ${{github.workspace}}/CI
-            run: |
-              python ./BackupCI.py
-            env:
-              ciToken: ${{ secrets.BACKUPCITOKEN }}
+          id: script
+          shell: bash
+          working-directory: ${{github.workspace}}/CI
+          run: |
+            python ./BackupCI.py
+          env:
+            ciToken: ${{ secrets.BACKUPCITOKEN }}
