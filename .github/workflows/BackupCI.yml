@@ -12,6 +12,10 @@ jobs:
       runs-on: ubuntu-latest
     
       steps:
+        - run: |
+            pip install PyGithub
+          name: Installing dependencies.
+
         - name: Fetching repository.
           uses: actions/checkout@v3
           with:
